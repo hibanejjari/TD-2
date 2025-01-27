@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+game</font>
+</center></td></tr></table>
+<pre><span class="s0">let score = 0;</span>
+
+<span class="s0">// Reference to the game box and score display</span>
+<span class="s0">const gameBox = document.getElementById(&quot;game-box&quot;);</span>
+<span class="s0">const scoreDisplay = document.getElementById(&quot;score&quot;);</span>
+
+<span class="s0">// Function to move the box to a random position</span>
+<span class="s0">function moveBox() {</span>
+  <span class="s0">const x = Math.floor(Math.random() * (window.innerWidth - 50));</span>
+  <span class="s0">const y = Math.floor(Math.random() * (window.innerHeight - 50));</span>
+  <span class="s0">gameBox.style.left = `${x}px`;</span>
+  <span class="s0">gameBox.style.top = `${y}px`;</span>
+<span class="s0">}</span>
+
+<span class="s0">// Add a click event listener to the game box</span>
+<span class="s0">gameBox.addEventListener(&quot;click&quot;, () =&gt; {</span>
+  <span class="s0">score++;</span>
+  <span class="s0">scoreDisplay.textContent = score;</span>
+  <span class="s0">moveBox();</span>
+<span class="s0">});</span>
+
+<span class="s0">// Move the box initially</span>
+<span class="s0">moveBox();</span>
+</pre>
+</body>
+</html>

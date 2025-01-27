@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>game.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #8c8c8c; font-style: italic;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+game.js</font>
+</center></td></tr></table>
+<pre><span class="s0">let </span><span class="s1">score = </span><span class="s2">0</span><span class="s1">;</span>
+
+<span class="s3">// Reference to the game box and score display</span>
+<span class="s0">const </span><span class="s1">gameBox = document.getElementById(</span><span class="s4">&quot;game-box&quot;</span><span class="s1">);</span>
+<span class="s0">const </span><span class="s1">scoreDisplay = document.getElementById(</span><span class="s4">&quot;score&quot;</span><span class="s1">);</span>
+
+<span class="s3">// Function to move the box to a random position</span>
+<span class="s0">function </span><span class="s1">moveBox() {</span>
+    <span class="s0">const </span><span class="s1">x = Math.floor(Math.random() * (window.innerWidth - </span><span class="s2">50</span><span class="s1">));</span>
+    <span class="s0">const </span><span class="s1">y = Math.floor(Math.random() * (window.innerHeight - </span><span class="s2">50</span><span class="s1">));</span>
+    <span class="s1">gameBox.style.left = </span><span class="s4">`</span><span class="s1">${x}</span><span class="s4">px`</span><span class="s1">;</span>
+    <span class="s1">gameBox.style.top = </span><span class="s4">`</span><span class="s1">${y}</span><span class="s4">px`</span><span class="s1">;</span>
+<span class="s1">}</span>
+
+<span class="s3">// Add a click event listener to the game box</span>
+<span class="s1">gameBox.addEventListener(</span><span class="s4">&quot;click&quot;</span><span class="s1">, () =&gt; {</span>
+    <span class="s1">score++;</span>
+    <span class="s1">scoreDisplay.textContent = score;</span>
+    <span class="s1">moveBox();</span>
+<span class="s1">});</span>
+
+<span class="s3">// Move the box initially</span>
+<span class="s1">moveBox();</span>
+</pre>
+</body>
+</html>
